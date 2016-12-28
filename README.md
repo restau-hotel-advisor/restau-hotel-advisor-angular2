@@ -3,6 +3,7 @@
 to get this repo 
 
 >>git clone https://github.com/restau-hotel-advisor/restau-hotel-advisor-angular2.git
+
 >>cd restau-hotel-advisor-angular2.git
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.21.
@@ -12,7 +13,9 @@ This project was generated with [angular-cli](https://github.com/angular/angular
 Run 
 
 >>cd server
+
 >>npm install
+
 >>nodemon server.js
 
 and then just type on URL for example (http://localhost:4200/Hotels) to get all Hotels list on database 
