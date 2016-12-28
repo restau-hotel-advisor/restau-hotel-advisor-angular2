@@ -1,0 +1,53 @@
+<div>
+  <h3>Admin / List Restaurantss</h3>
+
+</div>
+
+<p>
+  <a [routerLink]="['/admin']" class="btn btn-primary"> Back to admin</a>
+  <a [routerLink]="['/admin-add-restaurant']" class="btn btn-primary" alt="add"> Add Restaurant <span class="glyphicon glyphicon-plus"></span> </a>
+</p>
+
+
+<p>
+  {{restaurants|json}}
+</p>
+
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>name</th>
+    <th>localisation</th>
+    <th>budget</th>
+    <th>note</th>
+    <th>speciality</th>
+    <th>ambiance</th>
+    <th>filter</th>
+    <th>Image</th>
+    <th>actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of restaurants" >
+    <td>{{item.name}}</td>
+    <td>{{item.localisation}}</td>
+    <td>{{item.budget}}</td>
+    <td>{{item.note}}</td>
+    <td>{{item.speciality}}</td>
+    <td>{{item.ambiance}}</td>
+    <td>{{item.filter}}</td>
+    <td><img src="{{item.UrlImage}}" class="img-responsive" width="50" height="50" alt=""> </td>
+    <td>
+      <a [routerLink]="['/admin-view-restaurant/', item._id]" class="btn" alt="view"> <span class="glyphicon glyphicon-eye-open"></span> </a>
+      <!--<span>{{item._id}}</span>-->
+      <a [routerLink]="['/admin-edit-restaurant/', item._id]" class="btn" alt="edit"><span class="glyphicon glyphicon-edit"></span></a>
+      <button class="btn" alt="delete" (click)="deleteRestaurant(item._id);"  ><span class="glyphicon glyphicon-trash"></span></button>
+
+
+
+    </td>
+  </tr>
+  </tbody>
+</table>
+

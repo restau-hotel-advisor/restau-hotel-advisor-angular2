@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Single Recette</title>
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="dist/css/bootstrap.css">
+  <link rel="stylesheet" href="dist/css/jquery-ui.css">
+  <link rel="stylesheet" href="dist/css/jquery.raty.css">
+  <link rel="stylesheet" href="dist/css/select2.min.css" />
+	<link rel="stylesheet" href="dist/css/main.css">
+  <link rel="stylesheet" href="dist/css/restau-filter.css">
+  <link rel="stylesheet" href="dist/css/single-recette.css">
+
+  <style>
+    .postUtilities.postUtilities-online > li,.money-list > li{
+      padding-right: 0px; 
+      padding-left: 0px; 
+          margin-left: -1px;
+    }
+    .postUtilities.postUtilities-online > li a{
+          color: #959494;
+    }
+
+  </style>
+
+
+</head>
+<body class="single-recette">
+
+
+  <div id="advSearch" class="modal fade advSearch">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              
+              <div class="modal-body center-block text-center">
+                  <h1 class="heading1-search">
+                    <img src="dist/img/loop-adv.png" alt="">Recherche avancée
+                  </h1>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <form class="form-horizontal form-search-adv">
+                          <div class="form-group">
+                              <label for="inputEmail" class="control-label col-xs-3">Nom</label>
+                              <div class="col-xs-9">
+                                  <input type="text" class="form-control" id="inputNom" >
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label for="inputPassword" class="control-label col-xs-3">ville</label>
+                              <div class="col-xs-9">
+                                  <input type="text" class="form-control" id="inputVille" >
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label for="inputSexe" class="control-label col-xs-3">Sexe</label>
+                              <div class="col-xs-9">
+                                  <select class="form-control">
+                                      <option>Homme</option>
+                                      <option>Femme</option>
+                                      <option>Other</option>
+                                  </select>
+                              </div>
+                          </div>
+
+                          <div class="form-group">
+                              <label for="inputAge" class="control-label col-xs-3">Age</label>
+                              <div class="col-xs-9" style="padding-top: 12px;">
+                                  <!-- slider -->
+                                  <div id="slider-range"></div>
+                                  <div class="row">
+                                      <div class="col-xs-6" style="text-align:left">
+                                        <span id="rangeMin">0</span> 
+                                      </div>
+                                      <div class="col-xs-6"  style="text-align:right">
+                                        <span id="rangeMax">500</span> <span>+</span> 
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+
+                          <div class="form-group">
+                              <label for="inputPassword" class="control-label col-xs-3"
+                              style="padding-top:21px;">Niveau</label>
+                              <div class="col-xs-9">
+                                  <img src="dist/img/level.png" class="img-responsive" alt="level">
+                              </div>
+                          </div>
+
+                          <!-- <div class="form-group">
+                              <div class="col-xs-offset-3 col-xs-9">
+                                  <button type="submit" class="btn btn-primary">Login</button>
+                              </div>
+                          </div> -->
+                      </form>
+                    </div> <!-- col-md-6 -->
+                    <div class="col-md-6" style="margin-top:65px;">
+                      <p>
+                        <a href="#" class="btn btn-search-fb"></a>
+                      </p>
+                      <p>
+                        <a href="#" class="btn btn-search-gl"></a>
+                      </p>
+                    </div><!-- col-md-6 -->
+                  </div>
+                  <div class="row res_search">
+                    <h1>Resultat de recherche...</h1>
+                    <div class="col-md-12">
+
+
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <div class="row">
+                            <div class="col-xs-3"> 
+                              <img src="dist/img/avatar-modal-search.jpg" alt=""> 
+                            </div>
+                            <div class="col-xs-9">
+                              <p class="info_perso_serch">
+                                James Doe <br>
+                                56 <br>
+                                tunis 
+                              </p>
+                              
+                            </div>
+                          </div>
+                        </div> 
+                        <div class="col-sm-3">
+                          <div class="row">
+                            <div class="col-xs-3"> 
+                              <img src="dist/img/1.jpg" alt=""> 
+                            </div>
+                            <div class="col-xs-9">
+                              <p class="info_perso_serch">
+                                James Doe <br>
+                                56 <br>
+                                tunis 
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-3">
+                          <div class="row">
+                            <div class="col-xs-3"> 
+                              <img src="dist/img/2.jpg" alt=""> 
+                            </div>
+                            <div class="col-xs-9">
+                              <p class="info_perso_serch">
+                                James Doe <br>
+                                56 <br>
+                                tunis 
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-3">
+                          <div class="row">
+                            <div class="col-xs-3"> 
+                              <img src="dist/img/2.jpg" alt=""> 
+                            </div>
+                            <div class="col-xs-9">
+                              <p class="info_perso_serch">
+                                James Doe <br>
+                                56 <br>
+                                tunis 
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+
+
+
+
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <div class="row">
+                            <div class="col-xs-3"> 
+                              <img src="dist/img/avatar-modal-search.jpg" alt=""> 
+                            </div>
+                            <div class="col-xs-9">
+                              <p class="info_perso_serch">
+                                James Doe <br>
+                                56 <br>
+                                tunis 
+                              </p>
+                              
+                            </div>
+                          </div>
+                        </div> 
+                        <div class="col-sm-3">
+                          <div class="row">
+                            <div class="col-xs-3"> 
+                              <img src="dist/img/3.jpg" alt=""> 
+                            </div>
+                            <div class="col-xs-9">
+                              <p class="info_perso_serch">
+                                James Doe <br>
+                                56 <br>
+                                tunis 
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-3">
+                          <div class="row">
+                            <div class="col-xs-3"> 
+                              <img src="dist/img/4.jpg" alt=""> 
+                            </div>
+                            <div class="col-xs-9">
+                              <p class="info_perso_serch">
+                                James Doe <br>
+                                56 <br>
+                                tunis 
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-3">
+                          <div class="row">
+                            <div class="col-xs-3"> 
+                              <img src="dist/img/4.jpg" alt=""> 
+                            </div>
+                            <div class="col-xs-9">
+                              <p class="info_perso_serch">
+                                James Doe <br>
+                                56 <br>
+                                tunis 
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <div class="row">
+                            <div class="col-xs-3"> 
+                              <img src="dist/img/5.jpg" alt=""> 
+                            </div>
+                            <div class="col-xs-9">
+                              <p class="info_perso_serch">
+                                James Doe <br>
+                                56 <br>
+                                tunis 
+                              </p>
+                              
+                            </div>
+                          </div>
+                        </div> 
+                        <div class="col-sm-3">
+                          <div class="row">
+                            <div class="col-xs-3"> 
+                              <img src="dist/img/1.jpg" alt=""> 
+                            </div>
+                            <div class="col-xs-9">
+                              <p class="info_perso_serch">
+                                James Doe <br>
+                                56 <br>
+                                tunis 
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-3">
+                          <div class="row">
+                            <div class="col-xs-3"> 
+                              <img src="dist/img/4.jpg" alt=""> 
+                            </div>
+                            <div class="col-xs-9">
+                              <p class="info_perso_serch">
+                                James Doe <br>
+                                56 <br>
+                                tunis 
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-3">
+                          <div class="row">
+                            <div class="col-xs-3"> 
+                              <img src="dist/img/3.jpg" alt=""> 
+                            </div>
+                            <div class="col-xs-9">
+                              <p class="info_perso_serch">
+                                James Doe <br>
+                                56 <br>
+                                tunis 
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+
+
+
+                      
+
+
+
+
+                    </div>
+
+                  </div>
+              </div>
+              
+          </div>
+      </div>
+  </div>
+
+  <!-- modal -->
+  <div id="partage-modal" class="modal fade modal-wide">
+      <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <p class="text-center">Partager l’article </p>
+              </div>
+
+              <div class="modal-body">
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <p class="text-center para">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodtempor incididunt ut labore et dolore magna 
+                      </p>
+                      
+                        <p class="text-center">
+                          <a href="#" class="btn btn-primary fb-btn"></a>
+                        </p>
+                        <p class="text-center">
+                          <a href="#" class="btn btn-info tw-btn"></a>
+                        </p>
+                      
+                    </div>
+                  </div>
+              </div>
+              
+          </div>
+      </div>
+  </div>
+
+
+
+	<header>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<!-- logo -->
+					<a href="#"> <img src="dist/img/logo-web.png" class="img-responsive logo" alt="logo"> </a>
+				</div>
+				<div class="col-md-8" >
+
+					<!-- <a href="#" class="btn-compt pull-right"> <span class="btn-compt-icon"></span> Mon compte </a> -->
+          <div class="social  pull-right">
+            <ul class="list-inline pull-left theNavigation">
+              <li class="theName"> Bonjour Monsieur <span><a href="#">NAME DOE</a></span> </li>
+              <li class="myNavigation">
+                <!-- <div> <a href="#"> <img src="dist/img/online-profil.png" alt="profil"> <span>Profile</span></a> </div> -->
+                <div>  <a href="#"><span class="notifs">4</span><img src="dist/img/online-messages.png" alt="messages"> <span>Message</span></a> </div>
+                <div> <a href="#"><img src="dist/img/online-notif.png" alt="notif"><span>Notification</span></a> </div>
+                <div> <a href="#"><img src="dist/img/online-amis.png" alt="notif"><span>Amis</span></a> </div>
+              </li>
+              <li class="list-inline  theNavigationIMG">
+                <a href="#"><img src="dist/img/user-foto.png" alt=""></a>
+              </li>
+            </ul>
+            
+            <!-- <ul class="list-inline  theNavigationIMG">
+              <li> <img src="dist/img/user-foto.png" alt=""> </li>
+            </ul> -->
+          </div>
+          
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<nav role="navigation" class="navbar navbar-default ">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle navbar-left">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!-- <a href="#" class="navbar-brand">Brand</a> -->
+        </div>
+        <!-- Collection of nav links and other content for toggling -->
+        <div id="navbarCollapse" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav theNav">
+              <!--  -->
+              <li class="dropdown subSubMenu">
+            <a data-toggle="dropdown" class="dropdown-toggle hidden-md hidden-lg" href="#">Recettes <b class="caret"></b></a>
+                    <ul role="menu" class="dropdown-menu hidden-md hidden-lg ">
+                        <li><a href="#">Plat Principal</a></li>
+                        <li><a href="#">Dessert & Cocktails </a></li>
+                        <li><a href="#">Ingrédients</a></li>
+                        <li><a href="#">Thèmes</a></li>
+
+                        <li><a href="#">Recette6 </a></li>
+                        <li><a href="#">Recette7 </a></li>
+                        <li><a href="#">Recette9 </a></li>
+                        <li><a href="#">Recette9 </a></li>
+                    </ul>
+                </li>
+              <!--  -->
+                <li><a href="#"> <img src="dist/img/restauIcon.png" alt=""></a></li>
+                  <li class="divider-vertical"></li>
+                <li><a href="#">Restaurants</a></li>
+                  <li class="divider-vertical"></li>
+                <li><a href="#">Salons de thé & Brasseries</a></li>
+                  <li class="divider-vertical"></li>
+                <li><a href="#">Snacks & Pizzerias</a></li>
+                  <li class="divider-vertical"></li>
+                <li><a href="#">Patisseries</a></li>
+                  <li class="divider-vertical"></li>
+                <li><a href="#">Bars & Clubs</a></li>
+                  <li class="divider-vertical"></li>
+                <li><a href="#">Glaciers & Yaourties</a></li>
+                  <li class="divider-vertical"></li>
+                <li><a href="#">Dragées & chocolat</a></li>
+                  <li class="divider-vertical"></li>
+                <li><a href="#">Recette</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!--  -->
+
+    <!-- menu top carrousel  -->
+    <ul class="list-inline center-block text-center hidden-sm hidden-xs menu-top-carrousel">
+          <li><a href="#">Entrée</a>   </li>
+           <li class="divider-vertical"></li>
+          <li><a href="#">Plat Principal</a></li>
+           <li class="divider-vertical"></li>
+          <li><a href="#">Dessert & Cocktails</a></li>
+           <li class="divider-vertical"></li>
+          <li><a href="#">Ingrédients</a></li>
+           <li class="divider-vertical"></li>
+          <li><a href="#">Thèmes</a></li>
+           <li class="divider-vertical"></li>
+          <li><a href="#">Recette6</a></li>
+           <li class="divider-vertical"></li>
+          <li><a href="#">Recette7</a></li>
+           <li class="divider-vertical"></li>
+          <li><a href="#">Recette8</a></li>
+           <li class="divider-vertical"></li>
+          <li><a href="#">Recette9</a></li>
+      </ul>
+
+    <!-- slider -->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+      
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <img src="dist/img/slider-filter.jpg" alt="Chania">
+          <div class="carousel-caption">
+            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</h3>
+            <p class="titleTwo">Lorem ipsum dolor sit amet, consectetur adipiscing elit....</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- form inside carrousel -->
+      <form class="form-inline center-block text-center formInsideCarrousel">
+        
+           <div class="container">
+               <div class="row">
+                    <div class="col-sm-5">
+                        <select class="js-example-basic-hide-search"  id="inputProximite">
+                            <option value="Tunis" > Tunis</option>
+                            <option value="Tunis" > Bizerte</option>
+                            <option value="Tunis" > Ariana</option>
+                            <option value="Tunis" > Nabul</option>
+                            <option value="Tunis" > Ben Arous</option>
+                            <option value="Tunis" > Sousse</option>
+                            <option value="Tunis" > Manouba</option>
+                            <option value="Sfax" > Sfax</option>
+                       </select>
+                   </div>
+                   <div class="col-sm-5">
+                       <!-- <label class="sr-only" for="inputSearch">search</label>
+                       <input type="text" class="form-control" id="inputSearch"> -->
+                       <select class="js-example-basic-multiple" id="inputSearch"  multiple="multiple">
+                          <option value="Restaurants" 
+                              data-image="dist/img/ambianceico.png"> Restaurants</option>
+                          <option value="the" 
+                              data-image="dist/img/aproximite.png">Salons de thé & Brasseries</option>
+                          <option value="pizzas" 
+                            data-image="dist/img/budgeticon.png">Snacks & Pizzerias</option>
+                          <option value="pati" 
+                           data-image="dist/img/cuisson.png">Patisseries</option>
+                          <option value="clubs" 
+                           data-image="dist/img/diffcult.png">Bars & Clubs</option>
+                          <option value="yaourt" 
+                           data-image="dist/img/Horaires.png">Glaciers & Yaourties</option>
+                          <option value="chokolat" 
+                           data-image="dist/img/ico-langue.png">Dragées & chocolat</option>
+                          <option value="recette" 
+                           data-image="dist/img/ico-langue.png""ico-left-etab1.png">Recette</option>
+                        </select>
+                   </div>
+                   <div class="col-sm-2">
+                       <button type="submit" class="btn-search">
+                         <!-- <span class="glyphicon glyphicon-search"></span> --> Rechercher
+                       </button>
+                   </div>
+               </div>
+           </div>
+        
+        </form>
+
+    </div>
+    <!-- end slider -->
+
+
+    <!--  -->
+
+
+    <div class="container outerWrapper">
+        <div class="col-md-3 menu-left menu-left-etab">
+            <!-- right column (268px) -->
+
+            <h3 class="menu-left-heading">  
+              <img src="dist/img/filtericon.png" alt="">
+              Ingrédients  
+            </h3>
+
+            
+            <section class="numerotel">
+
+              <div class="row center-block text-center">
+                <div class="col-xs-12">
+                  - 0,5 Litres ...... 
+                </div>
+                <div class="col-xs-12">
+                  -  2 soupes 
+                </div>
+                <div class="col-xs-12">
+                  -  5 Grammes  
+                </div>
+                <div class="col-xs-12">
+                  - ............
+                </div>
+                <div class="col-xs-12">
+                  - ............
+                </div>
+                <div class="col-xs-12">
+                  - ............
+                </div>
+              </div>
+              
+            </section>
+
+
+            <h3 class="menu-left-heading"><img src="dist/img/preparation.png" alt="">  Préparation  </h3>
+
+            
+            <section class="numerotel">
+
+              <div class="row center-block text-center">
+                <div class="col-xs-12">
+                  - 2 oeufs
+                </div>
+                <div class="col-xs-12">
+                  -  4 tomates 
+                </div>
+                <div class="col-xs-12">
+                  -  du viande 
+                </div>
+                <div class="col-xs-12">
+                  - ............
+                </div>
+                
+              </div>
+              
+            </section>
+
+
+            <h3 class="menu-left-heading"><img src="dist/img/cuisson.png" alt="">  Cuisson </h3>
+            <section class="adress-etbl">
+                <p style="text-align:center">
+                  45 minutes
+                </p>
+              
+            </section>
+
+            <h3 class="menu-left-heading"><img src="dist/img/difu.png" alt="">  Difficulté </h3>
+            <section class="adress-etbl">
+                <p style="text-align:center">
+                  Facile
+                </p>
+              
+            </section>
+
+            <h3 class="menu-left-heading"><img src="dist/img/prix.png" alt="">  Prix </h3>
+            <section class="adress-etbl">
+                <p style="text-align:center">
+                  Moyen
+                </p>
+              
+            </section>
+
+            <h3 class="menu-left-heading"><img src="dist/img/subcategorie-ico.png" alt="">  Subcategories  </h3>
+            <section class="adress-etbl">
+                <p style="text-align:center">
+                  Amuse Bouche
+                </p>
+                <p style="text-align:center">
+                 Salées
+                </p>
+              
+            </section>
+
+           
+            <section>
+
+              <div class="row">
+                <p style="text-align:center">
+                   <b>Partager sur :</b>
+                </p>
+                  <p style="margin:0 auto;">
+                    <ul class="list-inline center-block text-center">
+                      <li> <a href="#" alt="fb"> 
+                        <img src="dist/img/facebook.png" class="img-responsive" width="32" height="32" alt=""> </a> 
+                      </li>
+                      <li> <a href="#" alt="tw"> 
+                        <img src="dist/img/twitter.png" class="img-responsive" width="32" height="32" alt=""> </a> 
+                      </li>
+                      <li> <a href="#" alt="gl"> 
+                        <img src="dist/img/google-plus.png" class="img-responsive" width="32" height="32" alt=""> </a> 
+                      </li>
+                      <li> <a href="#" alt="pr"> 
+                        <img src="dist/img/pinterest.png" class="img-responsive" width="32" height="32" alt=""> </a> 
+                      </li>
+                    </ul>
+                  </p>
+              </div>
+            </section>
+
+
+    
+           
+  
+        </div> <!-- menu-left -->
+
+
+
+
+
+        <div class="col-md-6 center-content">
+
+          
+
+          <section class="article-principal">
+            <h1 class="center-block text-center"> Nom de recette </h1>
+
+            <!-- buttons -->
+            <div class="btn-single-gr center-block text-center">
+              <a class="btn-single">lorem ipusem</a>
+              <a class="btn-single">lorem ipusem</a>
+              <a class="btn-single">lorem ipusem</a>
+              <a class="btn-single">lorem ipusem lorem</a>
+            </div>
+
+
+            <p>
+              <div class="row center-block text-center">
+                <div class="col-md-3">
+                  <div class="raty ratingClass"></div>
+                </div>
+                <div class="col-md-3" >
+                  <div class="votes-sr">8.9/10 (25 votes )</div>
+                </div>
+              
+                <div class="col-md-6">
+                  <ul class="list-inline money-list">
+                    <li> <img src="dist/img/p1.png"> </li>
+                    <li> <img src="dist/img/p1.png"> </li>
+                    <li> <img src="dist/img/p1.png"> </li>
+                    <li> <img src="dist/img/p2.png"> </li>
+                    <li> <img src="dist/img/p2.png"> </li>
+                  </ul>
+                </div>
+              </div>
+              
+            </p>
+            <p>
+              <img src="dist/img/single-article-img.jpg" class="img-responsive center-block text-center" alt="single article">
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo 
+            </p>
+            <!-- social -->
+            <div class="row postUtilities-blog">
+
+              <div class="col-xs-6">
+                <ul class="list-inline postUtilities postUtilities-online">
+                        <li> 
+                          <a href="#"> 
+                            <img src="dist/img/likeInfIco.png" alt=""> <span class="likeStat">3</span> 
+                          </a>
+                        </li>
+                        <li>
+                          <span class="barSeapara">|</span>
+                        </li>
+                        <li> 
+                          <a href="#"> 
+                            <img src="dist/img/disLikeInfIco.png" alt=""> <span class="disLikeStat">7</span> 
+                          </a>
+                        </li>
+                        <li>
+                          <span class="barSeapara">|</span>
+                        </li>
+                        <li> 
+                          <a href="#"> 
+                            <img src="dist/img/commentInfIco.png" alt=""> <span class="commentStat">5</span> 
+                          </a>
+                        </li>
+                        <li>
+                          <span class="barSeapara">|</span>
+                        </li>
+                        <li>
+                          <a href="#"> 
+                            <img src="dist/img/shareInfIco.png" alt=""> <span class="shareStat">5</span> 
+                          </a>
+                        </li>
+                      </ul>
+              </div>
+               <div class="col-xs-6">
+                <ul class="list-inline postUtilities 
+                          postUtilities-online pull-right">
+                  <li>
+                    <a href="#" class="likeBtn"> <img src="dist/img/online-likeBtn.png" alt=""> J’aime </a>
+                  </li>
+                  <li>
+                    <a href="#" class="dislikeBtn"> <img src="dist/img/pnline-dislikeBtn.png" alt=""> J’aime pas </a>
+                  </li>
+                </ul>
+               </div>
+
+              
+            </div>
+          </section>
+
+
+          <section class="etab-section">
+
+            <h3 class="menu-right-heading-etab"> 
+              <img src="dist/img/photo-etab.png" alt=""> Photos </h3>
+
+              <article class="row">
+                <div class="boxx"><img src="dist/img/p1.jpg" alt="image"></div>
+                <div class="boxx"><img src="dist/img/p2.jpg" alt="image"></div>
+                <div class="boxx"><img src="dist/img/p3.jpg" alt="image"></div>
+                <div class="boxx"><img src="dist/img/p4.jpg" alt="image"></div>
+                <div class="boxx"><img src="dist/img/p5.jpg" alt="image"></div>
+
+                <div class="boxx"><img src="dist/img/p6.jpg" alt="image"></div>
+                <div class="boxx"><img src="dist/img/p7.jpg" alt="image"></div>
+                <div class="boxx"><img src="dist/img/p8.jpg" alt="image"></div>
+                <div class="boxx"><a href="#" class="boxPhoto voirplus"> Voir plus </a></div>
+                <!-- <div class="boxx"><a href="#"  class="boxPhoto dragdrop"></a></div> -->
+              </article>
+            
+          </section>
+
+
+            
+          <!-- here goes the content -->
+          <div class="row commenter-etab-ico">
+            <div class="col-sm-12">
+              <img src="dist/img/avis-ico.png" alt="avis">
+              <span>Avis</span>
+            </div>
+          </div>
+          <div class="row exprimezVous commenter-etab">
+            <div class="col-sm-12">
+              <form>
+                  <div class="form-group">
+                      <textarea name="" id="" class="exp" cols="30" rows="10" 
+                      placeholder="Ecrire un avis minium 140 caractéres"></textarea>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <button type="submit" class="btn btn-publier pull-right">Commenter</button>
+                    </div>
+                  </div>
+              </form>
+            </div>
+          </div>  <!-- exprimezVous -->
+
+
+          <div class="row exprimezVous exprimPublied etabPublied">
+            <div class="col-sm-2">
+              <img src="dist/img/etab-publi-avatar.jpg" class="fotoDeProfil" alt="photo profil">
+            </div>
+            <div class="col-sm-10">
+              <div class="name-user"> Bernard Doe </div>
+              <p class="publied-content">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco...
+              </p>
+              <ul class="list-inline infstats pull-left">
+                <li> 
+                  <a href="#"> 
+                    <img src="dist/img/likeInfIco.png" alt=""> <span class="likeStat">3</span> 
+                  </a>
+                </li>
+                <li>
+                  <span class="barSeapara">|</span>
+                </li>
+                <li> 
+                  <a href="#"> 
+                    <img src="dist/img/disLikeInfIco.png" alt=""> <span class="disLikeStat">7</span> 
+                  </a>
+                </li>
+                <li>
+                  <span class="barSeapara">|</span>
+                </li>
+                <li> 
+                  <a href="#"> 
+                    <img src="dist/img/commentInfIco.png" alt=""> <span class="commentStat">5</span> 
+                  </a>
+                </li>
+                <li>
+                  <span class="barSeapara">|</span>
+                </li>
+                <li>
+                  <a href="#"> 
+                    <img src="dist/img/shareInfIco.png" alt=""> <span class="shareStat">5</span> 
+                  </a>
+                </li>
+              </ul>
+              <p class="theLast">
+                <img src="dist/img/exclamtionPoint.png" alt="exc">
+                <span>
+                  Ecrire un commentaire, utiliser @ pour taguer des amis
+                </span>
+              </p>
+            </div>
+          </div>  <!-- exprimPublied -->
+
+
+
+
+
+
+        </div>  <!-- center-content -->
+
+
+        <div class="col-md-3 menu-right">
+            <!-- right column (268px) -->
+
+            <h3 class="menu-right-heading"><img src="dist/img/m-n1.png" alt="">  Mieux Noté </h3>
+
+            
+            <section class="block-spnsirise center-block text-center">
+              <article class="item1">
+                <p class="spons-name" >
+                  Recette 1
+                </p>
+                <p>
+                  <img src="dist/img/art1.jpg" class="spons-img" alt="rest1">
+                </p>
+              </article>
+
+              <article class="item1">
+                <p class="spons-name" >
+                  Recette 2
+                </p>
+                <p>
+                  <img src="dist/img/art2.jpg" class="spons-img" alt="rest2">
+                </p>
+                
+              </article>
+
+              <article class="item1">
+                <p class="spons-name" >
+                    Recette 3
+                  </p>
+                  <p>
+                    <img src="dist/img/art3.jpg" class="spons-img" alt="rest3">
+                  </p>
+                  
+              </article>
+              <article class="item1">
+                <p class="spons-name" >
+                    Recette 4
+                  </p>
+                  <p>
+                    <img src="dist/img/art4.jpg" class="spons-img" alt="rest4">
+                  </p>
+                  
+              </article>
+
+              <article class="item1">
+                  <p class="spons-name" >
+                    Recette 5
+                  </p>
+                  <p>
+                    <img src="dist/img/art5.jpg" class="spons-img" alt="rest5">
+                  </p>
+                  
+              </article>
+
+
+            </section>
+
+
+
+            
+
+
+
+          
+
+
+
+            <h3 class="menu-right-heading"><img src="dist/img/plus.png" alt="">  Voir Aussi </h3>
+
+            <section>
+
+              <div class="row img-proximite">
+                
+                <div class="col-xs-5">
+                  <img src="dist/img/vaussi1.jpg" alt="prox">
+                </div>
+                <div class="col-xs-7">
+                  <p class="desc-proximite">
+                    <div class="name">Recette 1</div>
+                    <div class="name">Cuisson</div>
+                    <!-- rating -->
+                    <div class="raty ratingClass"></div>
+                  </p>
+                </div>
+              </div>
+
+              <div class="row img-proximite">
+                <div class="col-xs-5">
+                  <img src="dist/img/vaussi2.jpg" alt="prox">
+                </div>
+                <div class="col-xs-7">
+                  <p class="desc-proximite">
+                    <div class="name">Recette 2</div>
+                    <div class="name">Cuisson</div>
+                    <!-- rating -->
+                    <div class="raty ratingClass"></div>
+                  </p>
+                </div>
+              </div>
+
+              <div class="row img-proximite">
+                <div class="col-xs-5">
+                  <img src="dist/img/vaussi3.jpg" alt="prox">
+                </div>
+                <div class="col-xs-7">
+                  <p class="desc-proximite">
+                   <div class="name">Recette 3</div>
+                    <div class="name">Cuisson</div>
+                    <!-- rating -->
+                    <div class="raty ratingClass"></div>
+                  </p>
+                </div>
+              </div>
+
+              <div class="row img-proximite">
+                <div class="col-xs-5">
+                  <img src="dist/img/vaussi4.jpg" alt="prox">
+                </div>
+                <div class="col-xs-7">
+                  <p class="desc-proximite">
+                    <div class="name">Recette 4</div>
+                    <div class="name">Cuisson</div>
+                    <!-- rating -->
+                    <div class="raty ratingClass"></div>
+                  </p>
+                </div>
+              </div>
+              
+            </section>
+
+
+        </div>
+
+        
+    </div>
+
+
+    <!-- footer -->
+    <footer>
+      <div class="container">
+        <p class="center-block text-center rejoin">Rejoignez-nous sur</p>
+
+        <ul class="list-inline center-block text-center footerSocials">
+          <li> <a href="#"> <img src="dist/img/icfb.png" alt=""> </a> </li>
+          <li> <a href="#"> <img src="dist/img/icogm.png" alt=""> </a> </li>
+          <li> <a href="#"> <img src="dist/img/icotwiter.png" alt=""> </a> </li>
+          <li> <a href="#"> <img src="dist/img/icopLin.png" alt=""> </a> </li>
+          <li> <a href="#"> <img src="dist/img/icoprin.png" alt=""> </a> </li>
+          <li> <a href="#"> <img src="dist/img/icoYou.png" alt=""> </a> </li>
+          <li> <a href="#"> <img src="dist/img/icoy.png" alt=""> </a> </li>
+        </ul>
+
+
+        <ul class="list-inline center-block text-center footerLinks">
+          <li> <a href="#"> Qui somme nous </a> </li>
+          <li> - </li>
+          <li> <a href="#"> Contactez­-nous </a> </li>
+          <li> - </li>
+          <li> <a href="#"> Plan du site </a> </li>
+        </ul>
+
+
+      </div>
+
+      <div class="subFooter">
+        Copyright © 2016 trois-fourchettes.com.all rights reserved. 
+      </div>
+
+    </footer>
+    <div id="topcontrol" class="glyphicon glyphicon-chevron-up" title="top">
+    </div>
+	
+
+
+<script src="dist/js/jquery.min.js"></script>
+ <script src="dist/js/jquery-ui.min.js"></script>
+<script src="dist/js/bootstrap.js"></script>
+<script src="dist/js/jquery.raty.js"></script>
+<script src="dist/js/select2.min.js"></script>
+<script src="dist/js/main.js"></script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBid1haTE18IcYiBkCMZtWz_IpPKMeQmFw&signed_in=true&callback=initMap" async defer></script>
+
+
+<script>
+
+  $(document).ready(function(){
+
+    //the overlay
+    /**/
+
+    setTimeout(function(){ 
+      $(".select2-container").on('click',function (e) {
+        if (!$('#overlay').length) {
+            $('body').append('<div id="overlay"> </div>')
+        }
+
+      });
+      
+
+     }, 1000);
+      $('body').on('click', '#overlay',function (e) {
+                $(this).remove();
+        });
+
+    //select2 for search on top of page
+    function addIcons(opt) {
+      if (!opt.id) {
+        return opt.text;
+      }               
+      var optimage = $(opt.element).data('image'); 
+      if(!optimage){
+        return opt.text;
+      } else {
+        var $opt = $(
+        '<span class="userName"><img src="' + optimage + '" class="userPic" /> ' + $(opt.element).text() + '</span>'
+        );
+        return $opt;
+      }
+    };
+    //right select
+    $("#inputSearch").select2({
+      minimumResultsForSearch: Infinity,
+      placeholder: "exemple : restaurant, café, recette...",
+      tags: false,
+      templateResult: addIcons,
+      emplateSelection: addIcons
+    });
+
+    //the second select
+    $("#inputProximite").select2({
+      minimumResultsForSearch: Infinity,
+      placeholder: "à proximité de",
+    });
+
+
+    //raty
+    $('.raty').raty({score:5});
+
+
+    //slider
+
+    $("#slider-range").slider({
+        range: true,
+        min: 0,
+        max: 100,
+        values: [ 0, 100 ],
+        slide: function (event, ui) {
+            var value1 = $("#slider-range").slider("values", 0);
+            var value2 = $("#slider-range").slider("values", 1);
+            $("#rangeMin").text(value1);
+            $("#rangeMax").text(value2);
+        }
+    });
+
+  })
+
+
+
+  //google map
+  function initMap() {
+    var map = new google.maps.Map(document.getElementById('map-responsive'), {
+      zoom: 12,
+      center: {lat: 35.8293242, lng: 10.5504132},
+      disableDefaultUI: true,
+      width:818,
+      height : 378
+    });
+    var point = new google.maps.LatLng(35.8236,10.5583);
+    var marker = new google.maps.Marker({
+      position:point,
+      map:map,
+      icon:'dist/img/maps.png'
+    });
+  }
+  
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<p>
+  {{Restaurant | json}}
+</p>
+
+<div class="row">
+  <div class="col-md-12">
+    <p>
+      <a [routerLink]="['/admin-list-restaurant']" class="btn btn-primary"> Back to Restaurants List</a>
+    </p>
+
+    <h2>detail Restaurant : {{Restaurant.name}} </h2>
+
+    <dl class="dl-horizontal">
+      <dt>Nom Restaurant</dt>
+      <dd>{{Restaurant.name}}</dd>
+      <dt>localisation</dt>
+      <dd>{{Restaurant.localisation}}</dd>
+      <dt>medium bidget</dt>
+      <dd>{{Restaurant.budget}}</dd>
+      <dt>note</dt>
+      <dd>{{Restaurant.note}}</dd>
+      <dt>speciality</dt>
+      <dd>{{Restaurant.speciality}}</dd>
+      <dt>ambiance</dt>
+      <dd>{{Restaurant.ambiance}}</dd>
+      <dt>filter</dt>
+      <dd>{{Restaurant.filter}}</dd>
+      <dt>Image </dt>
+      <dd><img src="{{Restaurant.UrlImage}}" alt=""> </dd>
+    </dl>
+
+    <p>
+      <a [routerLink]="['/admin-edit-restaurant', id]" class="btn btn-primary"> Modify </a>
+    </p>
+
+  </div>
+</div>

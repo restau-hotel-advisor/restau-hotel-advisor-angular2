@@ -1,0 +1,3 @@
+Resto/Hotel Advisor
+Back-Office : Management des listes de restaurants et d'hôtels.
+Font-office : Recherches de restaurants et d'hotels. Géolocalisation. Réservation en ligne. Evaluation des restaurants et des hotels.

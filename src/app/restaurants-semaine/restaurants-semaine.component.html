@@ -1,0 +1,44 @@
+<app-header></app-header>
+
+<div class="container outerWrapper">
+
+  <app-menu-left></app-menu-left>
+
+  <div class="col-md-6 center-content">
+
+    <!--{{restaurants | json}}-->
+
+
+    <article class="thePost" *ngFor="let item of restaurants"> <!-- | slice:2:4 -->
+
+      <p>
+        <img src="{{item.UrlImage}}" class="img-responsive" alt="post-image">
+      </p>
+      <div>
+        <div class="row">
+          <div class="col-xs-6">
+            <h3 class="postTitle"> Restaurant :  {{item.name}} </h3>
+          </div>
+          <div class="col-xs-3  text-right">
+            <!-- rating -->
+            <div class="raty ratingClass"></div>
+          </div>
+          <div class="col-xs-3 notes">{{item.note}}({{item.nbVote}} votes)</div>
+        </div>
+      </div>
+
+      <p class="postMainPara"> {{item.description}} </p>
+      <p class="readMore">
+        <a href="#">Lire plus >></a>
+      </p>
+
+    </article>
+
+  </div>
+
+  <app-menu-right></app-menu-right>
+
+</div>
+
+<app-footer></app-footer>
+

@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Patisserie</title>
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="dist/css/bootstrap.css">
+  <link rel="stylesheet" href="dist/css/jquery.raty.css">
+  <link rel="stylesheet" href="dist/css/jquery.mCustomScrollbar.css" />
+  <link rel="stylesheet" href="dist/css/jquery-ui.css">
+  <link rel="stylesheet" href="dist/css/all.css" />
+  <link rel="stylesheet" href="dist/css/select2.min.css" />
+	<link rel="stylesheet" href="dist/css/main.css">
+  <link rel="stylesheet" href="dist/css/restau-filter.css">
+  <style>
+    .ui-widget-header {
+      background: none;
+    }
+    .block-item {
+        margin-left: 13px !important;
+    }
+  </style>
+  
+
+
+</head>
+<body class="restaut_filter restaut_pattiser">
+
+
+
+	<header>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<!-- logo -->
+					<a href="#"> <img src="dist/img/logo-web.png" class="img-responsive logo" alt="logo"> </a>
+				</div>
+				<div class="col-md-8" >
+
+					<!-- <a href="#" class="btn-compt pull-right"> <span class="btn-compt-icon"></span> Mon compte </a> -->
+          <div class="social pull-right">
+            <ul class="list-inline pull-left theNavigation">
+              <li class="theName"> Bonjour Monsieur <span><a href="#">NAME DOE</a></span> </li>
+              <li class="myNavigation">
+                <!-- <div> <a href="#"> <img src="dist/img/online-profil.png" alt="profil"> <span>Profile</span></a> </div> -->
+                <div>  <a href="#"><span class="notifs">4</span><img src="dist/img/online-messages.png" alt="messages"> <span>Message</span></a> </div>
+                <div> <a href="#"><img src="dist/img/online-notif.png" alt="notif"><span>Notification</span></a> </div>
+                <div> <a href="#"><img src="dist/img/online-amis.png" alt="notif"><span>Amis</span></a> </div>
+              </li>
+              <li class="list-inline  theNavigationIMG">
+                <a href="#"><img src="dist/img/user-foto.png" alt=""></a>
+              </li>
+            </ul>
+            
+            <!-- <ul class="list-inline  theNavigationIMG">
+              <li> <img src="dist/img/user-foto.png" alt=""> </li>
+            </ul> -->
+          </div>
+          
+				</div>
+			</div>
+		</div>
+	</header>
+
+	  <nav role="navigation" class="navbar navbar-default ">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle navbar-left">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!-- <a href="#" class="navbar-brand">Brand</a> -->
+        </div>
+        <!-- Collection of nav links and other content for toggling -->
+        <div id="navbarCollapse" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav theNav">
+              <!--  -->
+              <li class="dropdown subSubMenu">
+            <a data-toggle="dropdown" class="dropdown-toggle hidden-md hidden-lg" href="#">Recettes <b class="caret"></b></a>
+                    <ul role="menu" class="dropdown-menu hidden-md hidden-lg ">
+                        <li><a href="#">Plat Principal</a></li>
+                        <li><a href="#">Dessert & Cocktails </a></li>
+                        <li><a href="#">Ingrédients</a></li>
+                        <li><a href="#">Thèmes</a></li>
+
+                        <li><a href="#">Recette6 </a></li>
+                        <li><a href="#">Recette7 </a></li>
+                        <li><a href="#">Recette9 </a></li>
+                        <li><a href="#">Recette9 </a></li>
+                    </ul>
+                </li>
+              <!--  -->
+                <li><a href="#"> <img src="dist/img/restauIcon.png" alt=""></a></li>
+                  <li class="divider-vertical"></li>
+                <li><a href="#">Restaurants</a></li>
+                  <li class="divider-vertical"></li>
+                <li><a href="#">Salons de thé & Brasseries</a></li>
+                  <li class="divider-vertical"></li>
+                <li><a href="#">Snacks & Pizzerias</a></li>
+                  <li class="divider-vertical"></li>
+                <li><a href="#">Patisseries</a></li>
+                  <li class="divider-vertical"></li>
+                <li><a href="#">Bars & Clubs</a></li>
+                  <li class="divider-vertical"></li>
+                <li><a href="#">Glaciers & Yaourties</a></li>
+                  <li class="divider-vertical"></li>
+                <li><a href="#">Dragées & chocolat</a></li>
+                  <li class="divider-vertical"></li>
+                <li><a href="#">Recette</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- menu top carrousel  -->
+    <ul class="list-inline center-block text-center hidden-sm hidden-xs menu-top-carrousel">
+          <li><a href="#">Entrée</a>   </li>
+           <li class="divider-vertical"></li>
+          <li><a href="#">Plat Principal</a></li>
+           <li class="divider-vertical"></li>
+          <li><a href="#">Dessert & Cocktails</a></li>
+           <li class="divider-vertical"></li>
+          <li><a href="#">Ingrédients</a></li>
+           <li class="divider-vertical"></li>
+          <li><a href="#">Thèmes</a></li>
+           <li class="divider-vertical"></li>
+          <li><a href="#">Recette6</a></li>
+           <li class="divider-vertical"></li>
+          <li><a href="#">Recette7</a></li>
+           <li class="divider-vertical"></li>
+          <li><a href="#">Recette8</a></li>
+           <li class="divider-vertical"></li>
+          <li><a href="#">Recette9</a></li>
+      </ul>
+
+    <!-- slider -->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+      
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <img src="dist/img/slider-filter.jpg" alt="Chania">
+          <div class="carousel-caption">
+            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</h3>
+            <p class="titleTwo">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- form inside carrousel -->
+      <form class="form-inline center-block text-center formInsideCarrousel">
+        
+           <div class="container">
+               <div class="row">
+                    <div class="col-sm-5">
+                        <select class="js-example-basic-hide-search"  id="inputProximite">
+                            <option value="Tunis" > Tunis</option>
+                            <option value="Tunis" > Bizerte</option>
+                            <option value="Tunis" > Ariana</option>
+                            <option value="Tunis" > Nabul</option>
+                            <option value="Tunis" > Ben Arous</option>
+                            <option value="Tunis" > Sousse</option>
+                            <option value="Tunis" > Manouba</option>
+                            <option value="Sfax" > Sfax</option>
+                       </select>
+                   </div>
+                   <div class="col-sm-5">
+                       <!-- <label class="sr-only" for="inputSearch">search</label>
+                       <input type="text" class="form-control" id="inputSearch"> -->
+                       <select class="js-example-basic-multiple" id="inputSearch"  multiple="multiple">
+                          <option value="Restaurants" 
+                              data-image="dist/img/ambianceico.png"> Restaurants</option>
+                          <option value="the" 
+                              data-image="dist/img/aproximite.png">Salons de thé & Brasseries</option>
+                          <option value="pizzas" 
+                            data-image="dist/img/budgeticon.png">Snacks & Pizzerias</option>
+                          <option value="pati" 
+                           data-image="dist/img/cuisson.png">Patisseries</option>
+                          <option value="clubs" 
+                           data-image="dist/img/diffcult.png">Bars & Clubs</option>
+                          <option value="yaourt" 
+                           data-image="dist/img/Horaires.png">Glaciers & Yaourties</option>
+                          <option value="chokolat" 
+                           data-image="dist/img/ico-langue.png">Dragées & chocolat</option>
+                          <option value="recette" 
+                           data-image="dist/img/ico-langue.png""ico-left-etab1.png">Recette</option>
+                        </select>
+                   </div>
+                   <div class="col-sm-2">
+                       <button type="submit" class="btn-search">
+                         <!-- <span class="glyphicon glyphicon-search"></span> --> Rechercher
+                       </button>
+                   </div>
+               </div>
+           </div>
+        
+        </form>
+
+    </div>
+    <!-- end slider -->
+
+
+    <div class="container outerWrapper">
+      <div class="col-md-3 menu-left">
+            <!-- right column (268px) -->
+            
+
+            <h3 class="menu-left-heading"> <img src="dist/img/filtericon.png" alt=""> Filtres </h3>
+
+            
+            <section>
+              <h5 class="text-center titleBlock"> 
+                <img src="dist/img/aproximite.png" alt=""> à proximité de 
+              </h5>
+              <!-- <div class="outerscroll"> -->
+                <div class="filterByRegion" id="filterByRegion">
+                  <form class="form-inline">
+
+                      <div class="col-xs-6">
+                        <div class="radio">
+                            <label><input type="radio" class="big-radio"  name="quux[1]"> Tunis</label>
+                        </div>
+                      </div>
+                      <div class="col-xs-6">
+                        <div class="radio">
+                            <label><input type="radio" class="big-radio" name="quux[1]"> Bizerte</label>
+                        </div>
+                      </div>
+                      <div class="col-xs-6">
+                        <div class="radio">
+                            <label><input type="radio" class="big-radio" name="quux[1]"> Ariana</label>
+                        </div>
+                      </div>
+
+                      <div class="col-xs-6">
+                        <div class="radio">
+                            <label><input type="radio" class="big-radio" name="quux[1]"> Nabul</label>
+                        </div>
+                      </div>
+                      <div class="col-xs-6">
+                        <div class="radio">
+                            <label><input type="radio" class="big-radio" name="quux[1]"> Ben Arous</label>
+                        </div>
+                      </div>
+                      <div class="col-xs-6">
+                        <div class="radio">
+                            <label><input type="radio" class="big-radio" name="quux[1]"> Sousse</label>
+                        </div>
+                      </div>
+
+                      <div class="col-xs-6">
+                        <div class="radio">
+                            <label><input type="radio" class="big-radio" name="quux[1]"> Manouba</label>
+                        </div>
+                      </div>
+
+                      <div class="col-xs-6">
+                        <div class="radio">
+                            <label><input type="radio" class="big-radio" name="quux[1]"> Sfax</label>
+                        </div>
+                      </div>
+
+                  </form>
+                </div>
+              <!-- </div> -->
+            </section>
+
+
+            
+
+            <!-- slider -->
+            <section>
+              <h5 class="text-center titleBlock"> 
+                <img src="dist/img/budgeticon.png" alt=""> Budget pour deux (TND)
+              </h5>
+
+              <div class="text-center paddingWrapper">
+                <div id="slider-range"></div>
+                <div class="row">
+                  <div class="col-xs-6" style="text-align:left">
+                    <span id="rangeMin">0</span> 
+                  </div>
+                  <div class="col-xs-6"  style="text-align:right">
+                    <span id="rangeMax">500</span> <span>+</span> 
+                  </div>
+                </right
+              </div>
+            </section>
+
+
+            <!-- specialité -->
+            <section>
+              <h5 class="text-center titleBlock"> 
+                <img src="dist/img/spec_chokolat.png" alt=""> Spécialité 
+              </h5>
+              <!-- <div class="outerscroll"> -->
+                <div class="filterByRegion filterByCuisine" id="filterByCuisine">
+                  <form class="form-inline">
+
+                      <div class="col-xs-12">
+                        <div class="checkbox">
+                            <label><input type="checkbox" class="big-checkbox"  value="yes" id="answer" name="answer"> Pâtisserie Tunisienne  </label>
+                        </div>
+                      </div>
+                      <div class="col-xs-12">
+                        <div class="checkbox">
+                           <label><input type="checkbox" class="big-checkbox">
+                             Pâtisserie Américaine  
+                           </label>
+                        </div>
+                      </div>
+                      <div class="col-xs-12">
+                        <div class="checkbox">
+                            <label><input type="checkbox" class="big-checkbox"> 
+                              Pâtisserie Européenne</label>
+                        </div>
+                      </div>
+                      <div class="col-xs-12">
+                        <div class="checkbox">
+                            <label><input type="checkbox" class="big-checkbox"> 
+                              Gâteaux personnalisés </label>
+                        </div>
+                      </div>
+                      <div class="col-xs-12">
+                        <div class="checkbox">
+                            <label><input type="checkbox" class="big-checkbox"> 
+                              Pièces Montées </label>
+                        </div>
+                      </div>
+                      <div class="col-xs-12">
+                        <div class="checkbox">
+                            <label><input type="checkbox" class="big-checkbox"> 
+                              Salés</label>
+                        </div>
+                      </div>
+                      <div class="col-xs-12">
+                        <div class="checkbox">
+                            <label><input type="checkbox" class="big-checkbox"> 
+                              Viennoiserie </label>
+                        </div>
+                      </div>
+                      <div class="col-xs-12">
+                        <div class="checkbox">
+                            <label><input type="checkbox" class="big-checkbox"> 
+                              Tarte </label>
+                        </div>
+                      </div>
+                      <div class="col-xs-12">
+                        <div class="checkbox">
+                            <label><input type="checkbox" class="big-checkbox"> 
+                              Verrines  </label>
+                        </div>
+                      </div>
+                      <div class="col-xs-12">
+                        <div class="checkbox">
+                            <label><input type="checkbox" class="big-checkbox"> 
+                              Biscuit </label>
+                        </div>
+                      </div>
+                      <div class="col-xs-12">
+                        <div class="checkbox">
+                            <label><input type="checkbox" class="big-checkbox"> 
+                              Mousse </label>
+                        </div>
+                      </div>
+                      <div class="col-xs-12">
+                        <div class="checkbox">
+                            <label><input type="checkbox" class="big-checkbox"> 
+                              Custard </label>
+                        </div>
+                      </div>
+      
+                  </form>
+                </div>
+              <!-- </div> -->
+            </section>
+
+
+
+            <h3 class="menu-left-heading"> 
+              <img src="dist/img/morefilters.png" alt="">
+             Plus de Filtres 
+             <a href="#" id="expandContractFilter" class="expandContractFilter"></a>
+            </h3>
+
+            <!-- more filters -->
+            <section>
+              
+                <div class="filterByRegion filterByMore" id="filterByMore">
+                  <form class="form-inline">
+
+                      <div class="col-xs-12">
+                        <div class="checkbox">
+                            <label><input type="checkbox" class="big-checkbox"> manger sur place </label>
+                        </div>
+                      </div>
+
+                      
+                      <div class="col-xs-12">
+                        <div class="checkbox">
+                            <label><input type="checkbox" class="big-checkbox"> Livraison a domicile </label>
+                        </div>
+                      </div>
+                      
+
+                      <div class="col-xs-12">
+                        <div class="checkbox">
+                            <label><input type="checkbox" class="big-checkbox"> sert boisson</label>
+                        </div>
+                      </div>
+                      <div class="col-xs-12">
+                        <div class="checkbox">
+                            <label><input type="checkbox" class="big-checkbox"> Parking </label>
+                        </div>
+                      </div>
+
+                      <div class="col-xs-12">
+                        <div class="checkbox">
+                            <label><input type="checkbox" class="big-checkbox"> Espace non Fumeur</label>
+                        </div>
+                      </div>
+
+                      <div class="col-xs-12">
+                        <div class="checkbox">
+                            <label><input type="checkbox" class="big-checkbox"> Wifi</label>
+                        </div>
+                      </div>
+
+                      <div class="col-xs-12">
+                        <div class="checkbox">
+                            <label><input type="checkbox" class="big-checkbox"> Terrasse </label>
+                        </div>
+                      </div>
+
+                      <div class="col-xs-12">
+                        <div class="checkbox">
+                            <label><input type="checkbox" class="big-checkbox"> Accès handicapé </label>
+                        </div>
+                      </div>
+                      
+
+                      <div class="col-xs-12">
+                        <div class="checkbox">
+                            <label><input type="checkbox" class="big-checkbox"> Ouvert 24/7 </label>
+                        </div>
+                      </div>
+
+                      
+                  </form>
+                </div>
+              <!-- </div> -->
+            </section>
+
+
+
+            
+            
+
+
+            
+
+            
+
+
+
+            
+
+            
+
+
+
+
+            
+
+            
+
+        </div> <!-- menu-left -->
+
+
+      <div class="col-sm-9 center-content">
+
+        <!-- the map -->
+        <div id="map-responsive">
+          <!-- <img src="dist/img/map.jpg" alt=""> -->
+        </div>
+
+        <!-- filter par ville -->
+        <div class="filterByCity text-center">
+          <form class="form-inline">
+
+              <div class="checkbox">
+                  <label><input type="checkbox" class="big-checkbox"> Bardo</label>
+              </div>
+
+              <div class="checkbox">
+                  <label><input type="checkbox" class="big-checkbox"> ksar Said</label>
+              </div>
+              <div class="checkbox">
+                  <label><input type="checkbox" class="big-checkbox"> Omran</label>
+              </div>
+
+              <div class="checkbox">
+                  <label><input type="checkbox" class="big-checkbox"> Tunis ville</label>
+              </div>
+              <div class="checkbox">
+                  <label><input type="checkbox" class="big-checkbox"> Cité Tahrir</label>
+              </div>
+              <div class="checkbox">
+                  <label><input type="checkbox" class="big-checkbox"> Omran Supérieur</label>
+              </div>
+
+
+          </form>
+        </div>
+
+
+
+            <div class="text-center">
+              <div class="btn-group"> 
+                
+                  <ul class="list-inline">
+                    <li class="first-li">Trier par</li>
+                    <li>
+                      <button type="button" class="btn btn-primary btn-filter btn-first  pull-left">Rank</button>
+                      <button type="button" class="btn btn-primary btn-filter noactive btn-last">Prix Discendant</button>
+                    </li>
+                  </ul>
+
+              </div>
+            </div>
+
+
+            <div class="all-items">
+              <div class="row">
+                  <div class="col-sm-6 block-item">
+                  <a href="#" class="icon-bookmark-red"></a>
+                      <img src="dist/img/restau-pattiserie1.jpg" class="img-responsive" alt="">
+                      <h4>Escargot</h4>
+                      <div  class="item-info">
+                        <div class="row">
+                          <div class="col-xs-6">Localisation</div>
+                          <div class="col-xs-6">Sousse <a href="#" class="carte" alt="cart">, carte</a></div> 
+                        </div>
+                        <div class="row">
+                          <div class="col-xs-6">Budget moyen</div>
+                          <div class="col-xs-6">25TND - 60TND</div> 
+                        </div>
+                        <div class="row">
+                          <div class="col-xs-6">Note</div>
+                          <div class="col-xs-6">
+                            <!-- rating -->
+                            <div class="raty ratingClass"></div></div> 
+                        </div>
+                      </div>
+                  </div>
+                  <div class="col-sm-6 block-item">
+                  <a href="#" class="icon-bookmark-gris"></a>
+                      <img src="dist/img/restau-pattiserie2.jpg" class="img-responsive" alt="">
+                      <h4>Le Méditerranée</h4>
+                      <div  class="item-info">
+                        <div class="row">
+                          <div class="col-xs-6">Localisation</div>
+                          <div class="col-xs-6">Sousse <a href="#" class="carte" alt="cart">, carte</a></div> 
+                        </div>
+                        <div class="row">
+                          <div class="col-xs-6">Budget moyen</div>
+                          <div class="col-xs-6">25TND - 60TND</div> 
+                        </div>
+                        <div class="row">
+                          <div class="col-xs-6">Note</div>
+                          <div class="col-xs-6">
+                            <!-- rating -->
+                            <div class="raty ratingClass"></div></div> 
+                        </div>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="row">
+                  <div class="col-sm-6 block-item">
+                  <a href="#" class="icon-bookmark-gris"></a>
+                      <img src="dist/img/restau-pattiserie3.jpg" class="img-responsive" alt="">
+                      <h4>Les 3 Dauphins</h4>
+                      <div  class="item-info">
+                        <div class="row">
+                          <div class="col-xs-6">Localisation</div>
+                          <div class="col-xs-6">Sousse <a href="#" class="carte" alt="cart">, carte</a></div> 
+                        </div>
+                        <div class="row">
+                          <div class="col-xs-6">Budget moyen</div>
+                          <div class="col-xs-6">25TND - 60TND</div> 
+                        </div>
+                        <div class="row">
+                          <div class="col-xs-6">Note</div>
+                          <div class="col-xs-6">
+                            <!-- rating -->
+                            <div class="raty ratingClass"></div></div> 
+                        </div>
+                      </div>
+                  </div>
+                  <div class="col-sm-6 block-item">
+                  <a href="#" class="icon-bookmark-gris"></a>
+                      <img src="dist/img/restau-pattiserie4.jpg" class="img-responsive" alt="">
+                      <h4>La Marmite</h4>
+                      <div class="item-info">
+                        <div class="row">
+                          <div class="col-xs-6">Localisation</div>
+                          <div class="col-xs-6">Sousse <a href="#" class="carte" alt="cart">, carte</a></div> 
+                        </div>
+                        <div class="row">
+                          <div class="col-xs-6">Budget moyen</div>
+                          <div class="col-xs-6">25TND - 60TND</div> 
+                        </div>
+                        <div class="row">
+                          <div class="col-xs-6">Note</div>
+                          <div class="col-xs-6">
+                            <!-- rating -->
+                            <div class="raty ratingClass"></div></div> 
+                        </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-sm-6 block-item">
+                  <a href="#" class="icon-bookmark-gris"></a>
+                      <img src="dist/img/restau-pattiserie5.jpg" class="img-responsive" alt="">
+                      <h4>Bonaparte</h4>
+                      <div class="item-info">
+                        <div class="row">
+                          <div class="col-xs-6">Localisation</div>
+                          <div class="col-xs-6">Sousse <a href="#" class="carte" alt="cart">, carte</a></div> 
+                        </div>
+                        <div class="row">
+                          <div class="col-xs-6">Budget moyen</div>
+                          <div class="col-xs-6">25TND - 60TND</div> 
+                        </div>
+                        <div class="row">
+                          <div class="col-xs-6">Note</div>
+                          <div class="col-xs-6">
+                            <!-- rating -->
+                            <div class="raty ratingClass"></div></div> 
+                        </div>
+                      </div>
+                  </div>
+              
+                  <div class="col-sm-6 block-item">
+                  <a href="#" class="icon-bookmark-gris"></a>
+                      <img src="dist/img/restau-pattiserie6.jpg" class="img-responsive" alt="">
+                      <h4>Garden Grill Indoor </h4>
+                      <div class="item-info">
+                        <div class="row">
+                          <div class="col-xs-6">Localisation</div>
+                          <div class="col-xs-6">Sousse <a href="#" class="carte" alt="cart">, carte</a></div> 
+                        </div>
+                        <div class="row">
+                          <div class="col-xs-6">Budget moyen</div>
+                          <div class="col-xs-6">25TND - 60TND</div> 
+                        </div>
+                        <div class="row">
+                          <div class="col-xs-6">Note</div>
+                          <div class="col-xs-6">
+                            <!-- rating -->
+                            <div class="raty ratingClass"></div></div> 
+                        </div>
+                      </div>
+                  </div>
+              </div>
+
+              
+
+            </div> <!-- all-items -->
+
+
+
+
+
+            <div class="center-block text-center pagination-filter">
+              <ul class="list-inline">
+                <li> <a href="#" class="active">1</a> </li>
+                <li> <a href="#">2</a> </li>
+                <li> <a href="#">...</a> </li>
+                <li> <a href="#">8</a> </li>
+              </ul>
+            </div>
+
+      </div>
+    </div>
+        
+
+
+    <!-- footer -->
+    <footer>
+      <div class="container">
+        <p class="center-block text-center rejoin">Rejoignez-nous sur</p>
+
+        <ul class="list-inline center-block text-center footerSocials">
+          <li> <a href="#"> <img src="dist/img/icfb.png" alt=""> </a> </li>
+          <li> <a href="#"> <img src="dist/img/icogm.png" alt=""> </a> </li>
+          <li> <a href="#"> <img src="dist/img/icotwiter.png" alt=""> </a> </li>
+          <li> <a href="#"> <img src="dist/img/icopLin.png" alt=""> </a> </li>
+          <li> <a href="#"> <img src="dist/img/icoprin.png" alt=""> </a> </li>
+          <li> <a href="#"> <img src="dist/img/icoYou.png" alt=""> </a> </li>
+          <li> <a href="#"> <img src="dist/img/icoy.png" alt=""> </a> </li>
+        </ul> 
+
+
+        <ul class="list-inline center-block text-center footerLinks">
+          <li> <a href="#"> Qui somme nous </a> </li>
+          <li> - </li>
+          <li> <a href="#"> Contactez­-nous </a> </li>
+          <li> - </li>
+          <li> <a href="#"> Plan du site </a> </li>
+        </ul>
+
+
+      </div>
+
+      <div class="subFooter">
+        Copyright © 2016 trois-fourchettes.com.all rights reserved. 
+      </div>
+
+    </footer>
+    <div id="topcontrol" class="glyphicon glyphicon-chevron-up" title="top">
+    </div>
+	
+
+
+<script src="dist/js/jquery.min.js"></script>
+<script src="dist/js/bootstrap.js"></script>
+<script src="dist/js/jquery.raty.js"></script>
+<script src="dist/js/jquery.mCustomScrollbar.js"></script>
+<script src="dist/js/icheck.min.js"></script>
+<script src="dist/js/select2.min.js"></script>
+ <script src="dist/js/jquery-ui.min.js"></script>
+<script src="dist/js/jquery.mousewheel-3.0.6.min.js"></script>
+
+
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBid1haTE18IcYiBkCMZtWz_IpPKMeQmFw&signed_in=true&callback=initMap" async defer></script>
+
+<script src="dist/js/main.js"></script>
+
+
+<script>
+
+  $(document).ready(function(){
+
+    //the overlay
+    /**/
+
+    setTimeout(function(){ 
+      $(".select2-container").on('click',function (e) {
+        if (!$('#overlay').length) {
+            $('body').append('<div id="overlay"> </div>')
+        }
+
+      });
+      
+
+     }, 1000);
+      $('body').on('click', '#overlay',function (e) {
+                $(this).remove();
+        });
+
+    //select2 for search on top of page
+    function addIcons(opt) {
+      if (!opt.id) {
+        return opt.text;
+      }               
+      var optimage = $(opt.element).data('image'); 
+      if(!optimage){
+        return opt.text;
+      } else {
+        var $opt = $(
+        '<span class="userName"><img src="' + optimage + '" class="userPic" /> ' + $(opt.element).text() + '</span>'
+        );
+        return $opt;
+      }
+    };
+    //right select
+    $("#inputSearch").select2({
+      minimumResultsForSearch: Infinity,
+      placeholder: "exemple : restaurant, café, recette...",
+      tags: false,
+      templateResult: addIcons,
+      emplateSelection: addIcons
+    });
+
+    //the second select
+    $("#inputProximite").select2({
+      minimumResultsForSearch: Infinity,
+      placeholder: "à proximité de",
+    });
+
+
+    //raty
+    $('.raty').raty({score:5});
+    //scrollbar
+    $(window).load(function(){
+
+        /*
+        $(".all-items").mCustomScrollbar({
+            theme:"dark-3"
+        });
+        */
+        //region filter
+        $(".filterByRegion").mCustomScrollbar({
+            theme:"rounded-dark",
+            scrollbarPosition: "outside"
+        });
+        //slider
+
+        $("#slider-range").slider({
+            range: true,
+            min: 0,
+            max: 100,
+            values: [ 0, 100 ],
+            slide: function (event, ui) {
+                var value1 = $("#slider-range").slider("values", 0);
+                var value2 = $("#slider-range").slider("values", 1);
+                $("#rangeMin").text(value1);
+                $("#rangeMax").text(value2);
+            }
+        });
+        
+
+
+
+
+    });
+
+    //ichack
+     $('input').iCheck({
+        checkboxClass: 'icheckbox_minimal-grey',
+        radioClass: 'iradio_minimal-grey'
+    });
+
+
+  })
+
+
+  //google map
+  /**/
+  function initMap() {
+    var map = new google.maps.Map(document.getElementById('map-responsive'), {
+      zoom: 12,
+      center: {lat: 35.8293242, lng: 10.5504132},
+      disableDefaultUI: true,
+      width:818,
+      height : 378
+    });
+    var point = new google.maps.LatLng(35.8236,10.5583);
+    var marker = new google.maps.Marker({
+      position:point,
+      map:map,
+      icon:'dist/img/maps.png'
+    });
+  }
+  
+  
+</script>
+
+
+</body>
+</html>

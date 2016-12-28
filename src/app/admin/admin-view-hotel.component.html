@@ -1,0 +1,35 @@
+<p>
+  {{Hotel | json}}
+</p>
+
+<div class="row">
+  <div class="col-md-12">
+    <p>
+      <a [routerLink]="['/admin-list-hotels']" class="btn btn-primary"> Back to Hotels List</a>
+    </p>
+
+    <h2>detail Hotel : {{Hotel.name}} </h2>
+
+    <dl class="dl-horizontal">
+      <dt>Nom Hotel</dt>
+      <dd>{{Hotel.name}}</dd>
+      <dt>localisation</dt>
+      <dd>{{Hotel.localisation}}</dd>
+      <dt>medium bidget</dt>
+      <dd>{{Hotel.budget}}</dd>
+      <dt>note</dt>
+      <dd>{{Hotel.note}}</dd>
+      <dt>ambiance</dt>
+      <dd>{{Hotel.ambiance}}</dd>
+      <dt>filter</dt>
+      <dd>{{Hotel.filter}}</dd>
+      <dt>Image </dt>
+      <dd><img src="{{Hotel.UrlImage}}" alt=""> </dd>
+    </dl>
+
+    <p>
+      <a [routerLink]="['/admin-edit-hotel', id]" class="btn btn-primary"> Modify </a>
+    </p>
+
+  </div>
+</div>

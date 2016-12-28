@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home</title>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="dist/css/bootstrap.css">
+  <link rel="stylesheet" href="dist/css/select2.min.css"/>
+  <link rel="stylesheet" href="dist/css/all.css"/>
+  <link rel="stylesheet" href="dist/css/jquery.mCustomScrollbar.css"/>
+  <link rel="stylesheet" href="dist/css/jquery.raty.css">
+  <link rel="stylesheet" href="dist/css/datepicker3.css">
+  <link rel="stylesheet" href="dist/css/main.css">
+
+  <style>
+    /*very important to show the date picker on top
+     of the bootstrap modal*/
+    .datepicker {
+      z-index: 999999999991 !important;
+    }
+
+    /*style pour les checkboxes homme / femme*/
+    .checkbox11 {
+      padding: 0px 0 18px 34px;
+    }
+
+    .checkbox11 label {
+      margin-right: 15px;
+      color: #222;
+      font-size: 14px !important;
+    }
+
+    .form-group11 {
+      margin-top: 15px;
+    }
+
+    .btn-danger {
+      padding: 8px 40px;
+      width: 100%;
+    }
+
+  </style>
+
+
+</head>
+<body>
+
+
+<!-- modal -->
+<div id="partage-modal" class="modal fade modal-wide">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <p class="text-center">Partager l’article </p>
+      </div>
+
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-sm-12">
+            <p class="text-center para">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodtempor incididunt ut labore et
+              dolore magna
+            </p>
+
+            <p class="text-center">
+              <a href="#" class="btn btn-primary fb-btn"></a>
+            </p>
+            <p class="text-center">
+              <a href="#" class="btn btn-info tw-btn"></a>
+            </p>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- connexion/inscription modal -->
+<div id="connexion-modal" class="modal fade modal-wide">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <p class="text-center" id="titleModal">Connexion </p>
+      </div>
+
+      <div class="modal-body">
+        <!-- 1st -->
+        <div class="row" id="cx-modal-open">
+          <div class="col-sm-6 partLeft">
+
+            <p class="text-center para-principal"> J'ai déjà un compte </p>
+            <form>
+              <div class="form-group">
+                <label for="inputEmail" class="sr-only">Email</label>
+                <input type="email" class="form-control" id="inputEmail" placeholder="Adresse Email">
+              </div>
+              <div class="form-group">
+                <label for="inputPassword" class="sr-only">Password</label>
+                <input type="password" class="form-control" id="inputPassword" placeholder="Mot de passe">
+              </div>
+              <div class="checkbox">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <label><input type="checkbox"> </label>
+                    <span>Se souvenir de moi</span>
+                  </div>
+                  <div class="col-sm-6">
+                    <a href="#" class="forgottenPass pull-right">Mot de passe oublié ?</a>
+                  </div>
+                </div>
+              </div>
+              <button type="submit" class="center-block btn-submit-cx">Connexion</button>
+            </form>
+          </div>
+          <div class="col-sm-6 partRight">
+            <p class="text-center  para-principal"> Je suis un nouvel utilisateur <a href="#" class="insc-vous"
+                                                                                     id="openConnexion">Incrivez-vous</a>
+            </p>
+            <p class="text-center center-block text-center">
+              <a href="#" class="btn-fb-cx"></a>
+            </p>
+            <p class="text-center center-block text-center">
+              <a href="#" class="btn-gl-cx"></a>
+            </p>
+          </div>
+        </div>
+
+        <!-- 2nd -->
+        <div class="row" id="inscription-modal">
+          <div class="col-sm-6 partLeft">
+            <p class="text-center para-principal">Je suis un nouvel utilisateur</p>
+            <form>
+
+              <!-- first -->
+              <section class="oneHalfForm">
+                <div class="form-group">
+                  <label for="inputNom" class="sr-only">Nom</label>
+                  <input type="text" class="form-control" id="inputNom" placeholder="Votre Nom">
+                </div>
+                <div class="form-group">
+                  <!-- <label for="inputBirth" class="sr-only">Date de naissance</label>-->
+                  <!-- <input type="text" class="form-control" id="inputBirth" placeholder="Votre Date de naissance">  -->
+                  <input type="text" class="form-control clsDatePicker" id="inputBirth"
+                         placeholder="Votre Date de naissance">
+                </div>
+
+                <div class="checkbox checkbox11">
+                  <label>
+                    <input type="checkbox" class="big-checkbox big-checkbox11">
+                    Homme
+                  </label>
+                  <label>
+                    <input type="checkbox" class="big-checkbox big-checkbox11">
+                    Femme
+                  </label>
+                </div>
+
+                <div class="form-group form-group11">
+                  <select class="form-control" id="status">
+                    <option value=""> Célibataire</option>
+                    <option value=""> mariée</option>
+                  </select>
+                </div>
+
+                <div class="form-group center-block text-center">
+                  <a class="btn btn-danger" id="nextSecondHalf">
+                    Suivant
+                  </a>
+                </div>
+              </section> <!-- oneHalfForm -->
+
+              <!-- second -->
+
+              <section class="secondHalfForm">
+                <div class="form-group">
+                  <label for="inputEmail" class="sr-only">Email</label>
+                  <input type="email" class="form-control" id="inputEmail" placeholder="Votre Adresse Mail">
+                </div>
+                <div class="form-group">
+                  <label for="inputConfEmail" class="sr-only">Email</label>
+                  <input type="email" class="form-control" id="inputConfEmail" placeholder="Confirmer Votre Mail">
+                </div>
+                <div class="form-group">
+                  <label for="inputPassword" class="sr-only">Password</label>
+                  <input type="password" class="form-control" id="inputPassword" placeholder="Votre Mot De passe">
+                </div>
+                <div class="form-group">
+                  <label for="inputPassword" class="sr-only">Password</label>
+                  <input type="password" class="form-control" id="inputPassword"
+                         placeholder="Confirmer Votre Mot de passe">
+                </div>
+
+                <button type="submit" class="center-block btn-submit-cx">
+                  Inscription
+                </button>
+              </section>
+
+
+            </form>
+          </div>
+          <div class="col-sm-6 partRight">
+            <p class="text-center  para-principal"> J'ai déjà un compte <a href="#" class="insc-vous" id="openInscrit">Connexion</a>
+            </p>
+
+            <p class="text-center center-block text-center">
+              <a href="#" class="btn-fb-cx"></a>
+            </p>
+            <p class="text-center center-block text-center">
+              <a href="#" class="btn-gl-cx"></a>
+            </p>
+          </div>
+        </div>
+        <!-- end 2nd -->
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <!-- logo -->
+        <a href="#"> <img src="dist/img/logo-web.png" class="img-responsive logo" alt="logo"> </a>
+      </div>
+      <div class="col-sm-6">
+        <a href="#connexion-modal" data-toggle="modal" class="btn-compt pull-right"> <span
+          class="btn-compt-icon"></span> Mon compte </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav role="navigation" class="navbar navbar-default ">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle navbar-left">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <!-- <a href="#" class="navbar-brand">Brand</a> -->
+  </div>
+  <!-- Collection of nav links and other content for toggling -->
+  <div id="navbarCollapse" class="collapse navbar-collapse">
+    <ul class="nav navbar-nav theNav">
+      <!--  -->
+      <li class="dropdown subSubMenu">
+        <a data-toggle="dropdown" class="dropdown-toggle hidden-md hidden-lg" href="#">Recettes <b
+          class="caret"></b></a>
+        <ul role="menu" class="dropdown-menu hidden-md hidden-lg ">
+          <li><a href="#">Plat Principal</a></li>
+          <li><a href="#">Dessert & Cocktails </a></li>
+          <li><a href="#">Ingrédients</a></li>
+          <li><a href="#">Thèmes</a></li>
+
+          <li><a href="#">Recette6 </a></li>
+          <li><a href="#">Recette7 </a></li>
+          <li><a href="#">Recette9 </a></li>
+          <li><a href="#">Recette9 </a></li>
+        </ul>
+      </li>
+      <!--  -->
+      <li><a href="#"> <img src="dist/img/restauIcon.png" alt=""></a></li>
+      <li class="divider-vertical"></li>
+      <li><a href="#">Restaurants</a></li>
+      <li class="divider-vertical"></li>
+      <li><a href="#">Hotels</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+<!-- menu top carrousel  -->
+<ul class="list-inline center-block text-center hidden-sm hidden-xs menu-top-carrousel">
+  <li><a href="#">Restaurant de la semaine</a></li>
+  <li class="divider-vertical"></li>
+  <li><a href="#">Hotel de la semaine</a></li>
+</ul>
+
+
+<div class="container outerWrapper">
+  <div class="col-md-3 menu-left">
+    <!-- left column (268px) -->
+    <a href="#" class="btn-menu-left semaine-salon-the">Hotels</a>
+    <a href="#" class="btn-menu-left semaine-restaurant">Restaurants</a>
+    <a href="#" class="btn-menu-left semaine-restaurant">Restaurants de la semaine</a>
+    <a href="#" class="btn-menu-left semaine-salon-the">Hotels de thé de la semaine</a>
+  </div>
+  <div class="col-md-6 center-content">
+
+
+    <article class="thePost">
+
+      <p>
+        <img src="dist/img/post-one.jpg" class="img-responsive" alt="post-image">
+      </p>
+      <div>
+        <div class="row">
+          <div class="col-xs-6">
+            <h3 class="postTitle">Nom de l’article</h3>
+          </div>
+          <div class="col-xs-3  text-right">
+            <!-- rating -->
+            <div class="raty ratingClass"></div>
+          </div>
+          <div class="col-xs-3 notes">8/20(25 votes)</div>
+        </div>
+      </div>
+
+      <p class="postMainPara"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus expedita quisquam
+        aperiam totam iste tempora quam libero dolores in sequi et, soluta provident obcaecati numquam beatae ex
+        aspernatur fugit commodi. </p>
+      <p class="readMore">
+        <a href="#">Lire plus >></a>
+      </p>
+
+    </article>
+
+
+    <article class="thePost">
+
+      <p>
+        <img src="dist/img/post-one.jpg" class="img-responsive" alt="post-image">
+      </p>
+      <div>
+        <div class="row">
+          <div class="col-xs-6">
+            <h3 class="postTitle">Nom de l’article</h3>
+          </div>
+          <div class="col-xs-3  text-right">
+            <!-- rating -->
+            <div class="raty ratingClass"></div>
+          </div>
+          <div class="col-xs-3 notes">8/20(25 votes)</div>
+        </div>
+      </div>
+
+      <p class="postMainPara"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus expedita quisquam
+        aperiam totam iste tempora quam libero dolores in sequi et, soluta provident obcaecati numquam beatae ex
+        aspernatur fugit commodi. </p>
+      <p class="readMore">
+        <a href="#">Lire plus >></a>
+      </p>
+
+    </article>
+
+
+
+
+
+  </div>
+  <div class="col-md-3 menu-right">
+
+
+    <h3 class="menu-right-heading"><img src="dist/img/proximite.png" alt=""> Hotels a proximité de vous </h3>
+
+
+    <div class="container-menu">
+      <div class="media">
+        <div class="media-left">
+          <a href="#">
+            <img src="dist/img/avatar-medium.jpg" class="media-object" alt="Sample Image">
+          </a>
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading">Mme Doe</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor... ..incididunt </p>
+        </div>
+      </div> <!-- end media -->
+
+
+      <div class="media">
+        <div class="media-left">
+          <a href="#">
+            <img src="dist/img/avatar-medium1.jpg" class="media-object" alt="Sample Image">
+          </a>
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading">Lilia Doe</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor... </p>
+        </div>
+      </div> <!-- end media -->
+
+
+      <div class="media">
+        <div class="media-left">
+          <a href="#">
+            <img src="dist/img/avatar-medium1.jpg" class="media-object" alt="Sample Image">
+          </a>
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading">Sara Doe</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor... </p>
+        </div>
+      </div> <!-- end media -->
+
+    </div> <!-- container-menu -->
+
+
+    <h3 class="menu-right-heading"><img src="dist/img/proximite.png" alt=""> Restaurants a proximité de vous </h3>
+
+
+    <div class="container-menu">
+      <div class="media">
+        <div class="media-left">
+          <a href="#">
+            <img src="dist/img/avatar-medium.jpg" class="media-object" alt="Sample Image">
+          </a>
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading">Mme Doe</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor... ..incididunt </p>
+        </div>
+      </div> <!-- end media -->
+
+
+      <div class="media">
+        <div class="media-left">
+          <a href="#">
+            <img src="dist/img/avatar-medium1.jpg" class="media-object" alt="Sample Image">
+          </a>
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading">Lilia Doe</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor... </p>
+        </div>
+      </div> <!-- end media -->
+
+
+      <div class="media">
+        <div class="media-left">
+          <a href="#">
+            <img src="dist/img/avatar-medium1.jpg" class="media-object" alt="Sample Image">
+          </a>
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading">Sara Doe</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor... </p>
+        </div>
+      </div> <!-- end media -->
+
+    </div> <!-- container-menu -->
+
+
+  </div>
+
+
+</div>
+
+
+<!-- footer -->
+<footer>
+
+  <div class="container">
+    <p class="center-block text-center rejoin">Rejoignez-nous sur</p>
+
+    <ul class="list-inline center-block text-center footerSocials">
+      <li><a href="#"> <img src="dist/img/icfb.png" alt=""> </a></li>
+      <li><a href="#"> <img src="dist/img/icogm.png" alt=""> </a></li>
+      <li><a href="#"> <img src="dist/img/icotwiter.png" alt=""> </a></li>
+      <li><a href="#"> <img src="dist/img/icopLin.png" alt=""> </a></li>
+      <li><a href="#"> <img src="dist/img/icoprin.png" alt=""> </a></li>
+      <li><a href="#"> <img src="dist/img/icoYou.png" alt=""> </a></li>
+      <li><a href="#"> <img src="dist/img/icoy.png" alt=""> </a></li>
+    </ul>
+
+
+    <ul class="list-inline center-block text-center footerLinks">
+      <li><a href="#"> Qui somme nous </a></li>
+      <li> -</li>
+      <li><a href="#"> Contactez­-nous </a></li>
+      <li> -</li>
+      <li><a href="#"> Plan du site </a></li>
+    </ul>
+
+
+  </div>
+
+  <div class="subFooter">
+    Copyright © 2016 trois-fourchettes.com.all rights reserved.
+  </div>
+
+</footer>
+
+
+<div id="topcontrol" class="glyphicon glyphicon-chevron-up" title="top">
+</div>
+
+
+<script src="dist/js/jquery.min.js"></script>
+<script src="dist/js/bootstrap.js"></script>
+<script src="dist/js/moment.js"></script>
+<script src="dist/js/bootstrap-datepicker.js"></script>
+<script src="dist/js/select2.min.js"></script>
+<script src="dist/js/jquery.raty.js"></script>
+<script src="dist/js/icheck.min.js"></script>
+<script src="dist/js/jquery.mCustomScrollbar.js"></script>
+<script src="dist/js/main.js"></script>
+
+
+<script>
+
+  $(document).ready(function () {
+
+
+    //nextSecondHalf
+    /*
+     $('.modal-content').on('click', '#nextSecondHalf' , function(e){
+     e.preventDefault();
+     //$('#oneHalfForm').hide();
+     //$('#secondHalfForm').show();
+
+     //$("#oneHalfForm").css("display", "none");
+     //$("#secondHalfForm").css("display", "block");
+     } );
+     */
+
+    $('#nextSecondHalf').click(function () {
+      $(this).closest('section').hide().next('section').show();//openInscrit
+      //$(this).next('section').show();
+      //$("#secondHalfForm").css("display", "block");
+    })
+
+    // birthday
+    $('#inputBirth').datepicker();
+
+    //ichack
+    $('input').iCheck({
+      checkboxClass: 'icheckbox_minimal-grey',
+      radioClass: 'iradio_minimal-grey'
+    });
+
+    //the overlay
+    /**/
+
+    setTimeout(function () {
+      $(".select2-container").on('click', function (e) {
+        if (!$('#overlay').length) {
+          $('body').append('<div id="overlay"> </div>')
+        }
+
+      });
+
+
+    }, 1000);
+
+    $('body').on('click', '#overlay', function (e) {
+      $(this).remove();
+    });
+
+    //select2 for search on top of page
+    function addIcons(opt) {
+      if (!opt.id) {
+        return opt.text;
+      }
+      var optimage = $(opt.element).data('image');
+      if (!optimage) {
+        return opt.text;
+      } else {
+        var $opt = $(
+          '<span class="userName"><img src="' + optimage + '" class="userPic" /> ' + $(opt.element).text() + '</span>'
+        );
+        return $opt;
+      }
+    };
+    //right select
+    $("#inputSearch").select2({
+      minimumResultsForSearch: Infinity,
+      placeholder: "exemple : restaurant, café, recette...",
+      tags: false,
+      templateResult: addIcons,
+      emplateSelection: addIcons
+    });
+
+    //the second select
+    $("#inputProximite").select2({
+      minimumResultsForSearch: Infinity,
+      placeholder: "à proximité de",
+    });
+    //raty
+    $('.raty').raty({score: 5});
+
+    //region filter//.the_res_search
+    $(".act-recent").mCustomScrollbar({
+      theme: "rounded-dark",
+      scrollbarPosition: "inside"
+    });
+
+    /*open Inscrit modal*/
+    $('#openInscrit').on('click', function (event) {
+
+      event.preventDefault();
+
+      $('#titleModal').text('Connexion');
+
+      //
+
+      $("section.oneHalfForm").show();
+      $("section.secondHalfForm").hide();
+
+
+      //open inscrit modal
+
+      var titleModal = $('#titleModal');
+      console.log(titleModal);
+
+      var $inscri_modal = $('#inscription-modal');
+      $inscri_modal.css({
+        display: 'none'
+      });
+      //open connection modal
+      var $cx_modal = $('#cx-modal-open');
+      $cx_modal.css({
+        display: 'block'
+      });
+
+
+    });
+
+
+    /*open Connexion modal*/
+    $('#openConnexion').on('click', function (event) {
+
+      /* Act on the event */
+      event.preventDefault();
+
+      // $("#secondHalfForm").hide();
+      // console.log('hihi');
+
+
+      $('#titleModal').text('Inscription');
+
+
+      //open connection modal
+
+      $('.checkboxx').css({
+        'color': '#828282'
+      });
+
+      var titleModal = $('#titleModal');
+      //console.log(titleModal);
+
+      var cx_modal = $('#cx-modal-open');
+      cx_modal.css({
+        display: 'none'
+      });
+      //open inscrit modal
+      var inscri_modal = $('#inscription-modal');
+      inscri_modal.css({
+        display: 'block'
+      });
+
+
+    });
+
+
+  })
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<p>
+  <!---->
+  {{Restaurant | json}}
+</p>
+
+<div class="row">
+  <div class="col-md-12">
+    <p>
+      <a [routerLink]="['../admin']"> Back to admin</a>
+    </p>
+
+    <h2>add Restaurant  </h2>
+
+    <form  (ngSubmit)="addRestaurant(formClient)" #formClient="ngForm">
+      <div class="form-group">
+        <label for="name">name:</label>
+        <input type="text" class="form-control" [(ngModel)]="Restaurant.name" id="name" name="name" value="{{Restaurant.name}}">
+      </div>
+
+
+      <div class="form-group">
+        <label for="localisation">localisation:</label>
+        <input type="text" class="form-control" [(ngModel)]="Restaurant.localisation" id="localisation" name="localisation" value="{{Restaurant.localisation}}">
+      </div>
+
+      <div class="form-group">
+        <label for="budget">budget:</label>
+        <input type="text" class="form-control" [(ngModel)]="Restaurant.budget" id="budget" name="budget" value="{{Restaurant.budget}}">
+      </div>
+
+      <div class="form-group">
+        <label for="note">note:</label>
+        <input type="text" class="form-control" [(ngModel)]="Restaurant.note" id="note" name="note" value="{{Restaurant.note}}">
+      </div>
+
+      <div class="form-group">
+        <label for="note">speciality:</label>
+        <input type="text" class="form-control" [(ngModel)]="Restaurant.speciality" id="speciality" name="speciality" value="{{Restaurant.speciality}}">
+      </div>
+
+      <div class="form-group">
+        <label for="ambiance">ambiance:</label>
+        <input type="text" class="form-control" [(ngModel)]="Restaurant.ambiance" id="ambiance" name="ambiance" value="{{Restaurant.ambiance}}">
+      </div>
+
+      <div class="form-group">
+        <label for="filter">filter:</label>
+        <input type="text" class="form-control" [(ngModel)]="Restaurant.filter" id="filter" name="filter" value="{{Restaurant.filter}}">
+      </div>
+
+      <div class="form-group">
+        <label for="description">description:</label>
+        <textarea class="form-control" [(ngModel)]="Restaurant.description" id="description" name="description" cols="30" rows="10">{{Restaurant.description}}</textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="nbVote">number Vote:</label>
+        <input type="text" class="form-control" [(ngModel)]="Restaurant.nbVote" id="nbVote"  name="nbVote" value="{{Restaurant.nbVote}}">
+      </div>
+
+      <div class="form-group">
+        <label for="UrlImage">UrlImage:</label>
+        <input type="text" class="form-control" [(ngModel)]="Restaurant.UrlImage" id="UrlImage"  name="UrlImage" value="{{Restaurant.UrlImage}}">
+      </div>
+
+      <button type="submit" class="btn btn-default" >Update</button>
+
+
+    </form>
+
+  </div>
+</div>
+
