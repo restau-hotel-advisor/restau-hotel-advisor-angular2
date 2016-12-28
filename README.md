@@ -1,8 +1,35 @@
 # RestauHotelAdvisor
 
+to get this repo 
+
+>>git clone https://github.com/restau-hotel-advisor/restau-hotel-advisor-angular2.git
+>>cd restau-hotel-advisor-angular2.git
+
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.21.
 
-## Development server
+##for the server
+
+Run 
+
+>>cd server
+>>npm install
+>>nodemon server.js
+
+and then just type on URL for example (http://localhost:4200/Hotels) to get all Hotels list on database 
+
+
+## Run the application
+
+if you are on server directory just type on terminal
+
+>>cd ..
+
+and type
+
+>>npm install
+
+and
+
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
